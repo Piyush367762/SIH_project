@@ -1,0 +1,150 @@
+/* Reset & base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html, #root {
+  width: 100%;
+  height: 100%;
+  font-family: Arial, sans-serif;
+  background-color: #f9f9f9;
+}
+
+/* Page layout */
+.page-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: #ffffff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #333;
+}
+.web{
+  display: flex;
+
+}
+.web_image{
+  margin-top: auto;
+  display: flex;
+  width: 50%;
+  height: 100vh;
+  align-items: flex-start;
+  justify-content: center;
+}
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1.25rem;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #555;
+  font-weight: 500;
+}
+
+.nav-links a:hover {
+  color: #000;
+}
+
+/* Login section */
+.login-wrapper {
+  flex: 1;
+  display: flex;
+  align-items:flex-end;
+  margin-right: 10rem;
+  flex-direction: column;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.login-wrapper h1 {
+  
+  font-size: 2rem;
+  margin-right: 5rem;
+  margin-bottom: 0.5rem;
+  color: #333;
+}
+
+.login-wrapper p {
+  font-size: 1rem;
+  margin-right: 2rem;
+  margin-bottom: 2rem;
+  color: #666;
+}
+
+/* Form styling */
+.login-form {
+  display: flex;
+  flex-direction: column;
+  width: 320px;
+  gap: 1rem;
+}
+
+.login-form input {
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.login-form input:focus {
+  border-color: #0070f3;
+  outline: none;
+}
+
+.login-form button {
+  padding: 0.75rem;
+  font-size: 1rem;
+  background-color: #0070f3;
+  border: none;
+  color: #fff;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.login-form button:hover {
+  background-color: #005bb5;
+}
+
+/* Divider */
+.divider {
+  position: relative;
+  width: 320px;
+  text-align: center;
+  margin-top: 1.5rem;
+}
+
+.divider::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background-color: #ccc;
+  transform: translateY(-50%);
+}
+
+.divider span {
+  position: relative;
+  background-color: #f9f9f9;
+  padding: 0 0.75rem;
+  color: #666;
+}
