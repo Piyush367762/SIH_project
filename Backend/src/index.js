@@ -1,14 +1,14 @@
-// require('dotenv').config({path: './env'})
-import dotenv from "dotenv"
-import connectDB from "./db/index.js";
-import {app} from './app.js'
-dotenv.config({
-    path: './.env'
-})
+
+//import {app} from './app.js'  
+import connectMongoDB from "./db/mongodb.js";
+import dotenv from 'dotenv';
+import express from "express";
 
 
-
-connectDB()
+const app = express();
+//console.log(app);
+dotenv.config({path:'./.env'});
+connectMongoDB()
 .then(() => {
     app.listen(process.env.PORT || 8000, () => {
         console.log(`⚙️ Server is running at port : ${process.env.PORT}`);
@@ -19,26 +19,53 @@ connectDB()
 })
 
 
+// import User from '../models/User.model.js';
 
-/*
-import express from "express"
-const app = express()
-( async () => {
-    try {
-        await mongoose.connect(`${process.env.MONGODB_URI}/${DB_NAME}`)
-        app.on("errror", (error) => {
-            console.log("ERRR: ", error);
-            throw error
-        })
+// export const registerUser = async (req, res) => {
+//   try {
+//     const { username, email, password, fullName, currentEducation } = req.body;
 
-        app.listen(process.env.PORT, () => {
-            console.log(`App is listening on port ${process.env.PORT}`);
-        })
+//     // Check if user exists
+//     const existingUser = await User.findOne({
+//       where: {
+//         [Op.or]: [
+//           { email: email },
+//           { username: username }
+//         ]
+//       }
+//     });
 
-    } catch (error) {
-        console.error("ERROR: ", error)
-        throw err
-    }
-})()
+//     if (existingUser) {
+//       return res.status(409).json({
+//         success: false,
+//         message: "User already exists"
+//       });
+//     }
 
-*/
+//     // Create user
+//     const user = await User.create({
+//       username,
+//       email,
+//       passwordHash: password, // will be hashed by hook
+//       fullName,
+//       currentEducation
+//     });
+
+//     const createdUser = await User.findByPk(user.id, {
+//       attributes: { exclude: ['passwordHash'] }
+//     });
+
+//     return res.status(201).json({
+//       success: true,
+//       message: "User registered successfully",
+//       data: createdUser
+//     });
+
+//   } catch (error) {
+//     return res.status(500).json({
+//       success: false,
+//       message: "Registration failed",
+//       error: error.message
+//     });
+//   }
+// };
