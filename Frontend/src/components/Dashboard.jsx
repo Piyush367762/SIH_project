@@ -32,4 +32,8 @@ export default function Dashboard() {
       <Footer />
     </div>
   );
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> f5af21c679fff8ab8535f0ac6e83ba5fc146d43b
